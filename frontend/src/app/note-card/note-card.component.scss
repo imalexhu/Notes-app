@@ -1,0 +1,59 @@
+@import '../../main-style.scss';
+.note-card-container {
+    position: relative;
+    background: white;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0px 2px 15px 2px rgba($color: black, $alpha: 0.08);
+    transition: box-shadow 0.2s ease-out;
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0px 0px 0px 4px rgba($color: black, $alpha: 0.1);
+        .fa-window-close {
+            opacity: 1;
+            transition-delay: 0.4s;
+            transform: scale(1)
+        }
+    }
+    .note-card-content {
+        .title {
+            font-size: 22px;
+            font-weight: bold;
+            color: $purple;
+        }
+        .content {
+            pointer-events: none;
+            color: #555;
+            position: relative;
+            font-size: 16px;
+            max-height: 100px;
+            overflow: hidden;
+            .fade-out {
+                position: absolute;
+                bottom: 0;
+                height: 50%;
+                width: 100%;
+                background: linear-gradient(to bottom, rgba($color: white, $alpha: 0), white 100%);
+            }
+        }
+    }
+}
+
+.fa-window-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 30px;
+    color: #e71837;
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+    transform: scale(0.2);
+    opacity: 0;
+    &:hover {
+        cursor: pointer;
+        color: #cc0000;
+        transition: color 0.2s ease-out;
+    }
+    &:active {
+        color: #800000;
+    }
+}

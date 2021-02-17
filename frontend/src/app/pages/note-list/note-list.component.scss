@@ -1,0 +1,33 @@
+@import '../../../main-style.scss';
+.main-container {
+    position: relative;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    height: 100%;
+    max-width: 600px;
+    padding-top: 50px;
+}
+
+.note-list {
+    margin-top: 35px;
+}
+
+.new-task {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    bottom: 50px;
+}
+
+.task-button {
+    width: 100% !important;
+    background-color: $purple !important;
+}
+
+app-note-card {
+    display: block;
+    margin-bottom: 25px;
+}
