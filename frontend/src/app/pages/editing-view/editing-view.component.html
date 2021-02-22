@@ -1,0 +1,13 @@
+<div class="main-container">
+    <div>
+        <h1 class="header">Title</h1>
+        <input #title class="input is-primary" type="text" value={{editingTask.title}}>
+    </div>
+    <div class='body'>
+        <h1 class="header">
+            Body
+        </h1>
+        <textarea #body class="input is-primary body" type="text" value={{editingTask.body}}></textarea>
+    </div>
+    <button routerLink='' routerLinkActive='active' class="button is-primary is-light task-button" (click)="updateTask(title.value,body.value)">Update</button>
+</div>
