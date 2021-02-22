@@ -1,16 +1,19 @@
 const mongoose = require('./dataBase/mongose')
 const express = require('express')
+const cors = require('cors')
 const app = express()
 const { Task } = require('./dataBase/schema')
 const bodyParser = require('body-parser')
 
+app.use(bodyParser.json());
+
+app.use(cors());
 
 app.get('/tasks', (req, res) => {
     // return all tasks
     Task.find({}).then((list) => res.send(list))
 })
 
-app.use(bodyParser.json());
 
 app.post('/tasks', (req, res) => {
     let title = req.body.title;
@@ -30,6 +33,7 @@ app.post('/tasks', (req, res) => {
 app.patch('/tasks/:id', (req, res) => {
     let _id = req.params.id;
 
+
     Task.findByIdAndUpdate({ _id }, {
         $set: req.body
     }).then(res.sendStatus(200))
@@ -39,6 +43,8 @@ app.patch('/tasks/:id', (req, res) => {
 app.delete('/tasks/:id', (req, res) => {
     // delete the task
     let _id = req.params.id;
+    console.log("Deleating")
+    console.log(_id)
 
     Task.findByIdAndDelete({ _id }).then((deleated) => res.send(deleated))
 })

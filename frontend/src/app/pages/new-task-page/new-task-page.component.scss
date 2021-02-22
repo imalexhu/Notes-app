@@ -1,0 +1,26 @@
+@import '../../../main-style.scss';
+.main-container {
+    position: relative;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    height: 90%;
+    max-width: 600px;
+    padding-top: 50px;
+    border-radius: 10px;
+    background-color: $light-red;
+}
+
+.header {
+    font-size: 24px!important;
+}
+
+.body {
+    text: top;
+    height: 80%;
+}
+
+.task-button {
+    background-color: $purple!important;
+    border-radius: 10px;
+}

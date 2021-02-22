@@ -1,0 +1,13 @@
+<div class="main-container">
+    <div>
+        <h1 class="header">Title</h1>
+        <input #title class="input is-primary" type="text" placeholder="Enter the task title">
+    </div>
+    <div class='body'>
+        <h1 class="header">
+            Body
+        </h1>
+        <textarea #body class="input is-primary body" type="text" placeholder="Enter the task description"></textarea>
+    </div>
+    <button routerLink='' routerLinkActive='active' class="button is-primary is-light task-button" (click)="createNewTask(title.value,body.value)">Create New Task</button>
+</div>
