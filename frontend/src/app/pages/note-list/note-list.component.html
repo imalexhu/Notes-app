@@ -2,20 +2,22 @@
     <div class="search-bar-container">
         <div class="field">
             <p class="control has-icons-left">
-                <input class="input" type="text" placeholder="Filter">
+                <input #search [(ngModel)]="search.value" (keydown)="sort(search.value)" class="input" type="text" placeholder="Filter">
                 <span class="icon is-small is-left">
                     <i class="fas fa-search"></i>
                 </span>
             </p>
         </div>
 
-        <div class="note-list">
+        <div #notes class="note-list">
             <app-note-card></app-note-card>
         </div>
 
 
         <div class="new-task">
             <button routerLink='/new-task-page' routerLinkActive='active' class="button is-primary is-light task-button">Add New Task</button>
+            <br>
+            <button routerLink='' routerLinkActive='active' (click)="clearAll()" class="button clear is-light task-button">Clear All Tasks</button>
         </div>
     </div>
 </div>

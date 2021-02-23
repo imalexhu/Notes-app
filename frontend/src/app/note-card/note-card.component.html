@@ -1,4 +1,4 @@
-<div *ngFor="let task of tasks" #container class="note-card-container">
+<div *ngFor="let task of tasks" #note class="note-card-container">
     <div (click)="edit(task.title)" class="note-card-content">
         <h1 class="title"> {{task.title}} </h1>
         <div class="body">

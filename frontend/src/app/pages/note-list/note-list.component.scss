@@ -14,6 +14,8 @@
 }
 
 .new-task {
+    flex-direction: column;
+    margin-bottom: 15px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -30,4 +32,9 @@
 app-note-card {
     display: block;
     margin-bottom: 25px;
+}
+
+.clear {
+    background-color: red !important;
+    color: white !important;
 }

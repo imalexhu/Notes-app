@@ -1,5 +1,4 @@
 import { Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { EditingViewComponent } from '../pages/editing-view/editing-view.component';
 import { WebRequestService } from '../web-request.service';
 
 @Component({
@@ -14,15 +13,18 @@ export class NoteCardComponent implements OnInit {
 
   @ViewChild('fade') fade !: ElementRef<HTMLElement>;
   @ViewChild('content') content !: ElementRef<HTMLElement>;
+  @ViewChild('note') note !: ElementRef
+
 
   tasks: any;
 
-  constructor(private render: Renderer2, private webRequest: WebRequestService, ) { }
+  constructor(private render: Renderer2, private webRequest: WebRequestService,) { }
 
   delete(title: any) {
     this.tasks.forEach(task => {
       if (task.title === title) {
         this.webRequest.deleteTask(task._id)
+        this.note.nativeElement.remove();
       }
     });
   }
@@ -30,7 +32,7 @@ export class NoteCardComponent implements OnInit {
   edit(title) {
     this.tasks.forEach(task => {
       if (task.title === title) {
-        window.location.href = 'http://localhost:4200/tasks/edit/'+task._id
+        window.location.href = 'http://localhost:4200/tasks/edit/' + task._id
       }
     })
   }

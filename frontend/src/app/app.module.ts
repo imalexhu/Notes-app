@@ -9,6 +9,7 @@ import { NoteCardComponent } from './note-card/note-card.component';
 import { NewTaskPageComponent } from './pages/new-task-page/new-task-page.component';
 import {HttpClientModule} from '@angular/common/http';
 import { EditingViewComponent } from './pages/editing-view/editing-view.component'
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { EditingViewComponent } from './pages/editing-view/editing-view.componen
     EditingViewComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule

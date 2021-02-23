@@ -16,6 +16,10 @@ export class WebRequestService {
     return this.http.post(this.ROOT_URL+'/tasks',{title,body}).subscribe(ret=>console.log(ret))
   }
 
+  deleteAll(){
+    return this.http.delete(this.ROOT_URL+"/tasks").subscribe();
+  }
+
   getTasks(){
     return this.http.get(this.ROOT_URL+'/tasks');
   }
